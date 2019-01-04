@@ -5,8 +5,8 @@
  * @package models
  * @version 1.0.0
  */
-
-export class Author {
+import { htmlInterface } from "./../interface/htmlInterface";
+export class Author implements htmlInterface {
     /**
      * @var string
      * Le nom de l'auteur
@@ -37,6 +37,14 @@ export class Author {
             month.toString() + '-' +
             this.dateDeNaissance.getFullYear().toString();
         return date;
+    }
+    public asHTML():void{
+        let content: string = '';
+        content += '<p> Nom de l\'auteur: ' + this.nom + '</p>';
+        content += '<p> Prénom de l\'auteur: ' + this.prenom + '</p>';
+        content += '<p>Biographie de l\'auteur: ' + this.biographie + '</p>';
+        const body = document.querySelector('body');
+        body.innerHTML+=content;
     }
 
 } 

@@ -9,6 +9,7 @@ import{ Livre } from './models/livre';
 
 
 import{ Author } from './models/author';
+import { Loueur } from './models/loueurs';
 
 //Créer un Auteur
 
@@ -28,6 +29,14 @@ const lesMiserables: Livre = new Livre();
 lesMiserables.author=new Author();
 lesMiserables.isbn='00002222599545';
 lesMiserables.titre='les Misérables';
+fondation.asHTML();
+//Créer un user loueurs
+
+const jean:Loueur=new Loueur();
+jean.name('Jean');
+jean.pren('Jack');
+jean.num('021122554');
+jean.asHTML();
 
 
 

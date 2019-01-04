@@ -1,5 +1,6 @@
 import{ Livre} from "./livre"
 import{ Utilisateurs } from "./users"
+import { htmlInterface } from "./../interface/htmlInterface";
 export class Loueur extends Utilisateurs{
     private livres: Map<number, Livre>;
     public constructor(){

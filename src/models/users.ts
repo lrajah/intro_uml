@@ -10,34 +10,43 @@
  * @param optional nom: string ou null
  * @usage object.nom()=> retourne le nom de l'utilisateur, object.name('name') => affecte à la propriété nom
  */
-import{ Livre} from "./livre"
- export abstract class Utilisateurs{
-     protected nom: string;
-     protected prenom: string;
-     protected numAd: string;
-     public name(nom: string=null): Utilisateurs | string{
-         if(nom===null){
-             return this.nom;
-         }
-         this.nom=nom;
-         return this;
-     }
-     public pren(prenom: string=null): Utilisateurs | string{
-        if(prenom===null){
+import { Livre } from "./livre";
+import { htmlInterface } from "./../interface/htmlInterface";
+export abstract class Utilisateurs implements htmlInterface {
+    protected nom: string;
+    protected prenom: string;
+    protected numAd: string;
+    public name(nom: string = null): Utilisateurs | string {
+        if (nom === null) {
+            return this.nom;
+        }
+        this.nom = nom;
+        return this;
+    }
+    public pren(prenom: string = null): Utilisateurs | string {
+        if (prenom === null) {
             return this.prenom;
         }
-        this.prenom=prenom;
+        this.prenom = prenom;
         return this;
     }
 
-    public num(num: string=null): Utilisateurs | string{
-        if(num===null){
+    public num(num: string = null): Utilisateurs | string {
+        if (num === null) {
             return this.numAd;
         }
-        this.numAd=num;
+        this.numAd = num;
         return this;
     }
     public abstract remove(indice: number): Utilisateurs;
     public abstract add(livre: Livre): Utilisateurs;
+    public asHTML(): void {
+        let content: string = '';
+        content += '<p><strong> N° Adadhérent </strong>: ' + this.numAd + '</p>';
+        content += '<p> Nom: ' + this.nom + '</p>';
+        content += '<p> Prénom: ' + this.prenom + '</p>';
+        const body = document.querySelector('body');
+        body.innerHTML+=content;
+    }
 
- }
+}

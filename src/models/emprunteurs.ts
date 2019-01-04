@@ -5,7 +5,7 @@
  * @package models
  * @version 1.0.0
  */
-
+import { htmlInterface } from "./../interface/htmlInterface";
 import{ Livre } from "./livre"
 import{ Utilisateurs } from "./users"
 export class Emprunteurs extends Utilisateurs{
