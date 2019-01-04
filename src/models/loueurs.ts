@@ -1,6 +1,7 @@
 import{ Livre} from "./livre"
 import{ Utilisateurs } from "./users"
 import { htmlInterface } from "./../interface/htmlInterface";
+import { Emprunteurs } from "./emprunteurs";
 export class Loueur extends Utilisateurs{
     private livres: Map<number, Livre>;
     public constructor(){
@@ -16,4 +17,18 @@ export class Loueur extends Utilisateurs{
         this.livres.delete(indice);
         return this;
     }
+    public find(loueur:Loueur, livre: Livre):number{
+        var i: number;
+        var j: number=-1;
+        for(let i of Array.from( loueur.livres.keys()) ) {
+            //console.log(i);
+            if(loueur.livres.get(i)==livre){
+                j=i;
+                
+            }
+        }
+      //  console.log(j);
+        return j;
+    }
+   
 }

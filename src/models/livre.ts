@@ -26,7 +26,7 @@ export class Livre implements htmlInterface {
     public author: Author;
 
     public constructor() {
-        console.log('Livre est en vie');
+        //console.log('Livre est en vie');
     }
     /**
     * Surcharge de la methode toString() générale
