@@ -1,4 +1,5 @@
 import{ Livre} from "./livre"
+import{ Utilisateurs } from "./users"
 export class Loueur extends Utilisateurs{
     private livres: Map<number, Livre>;
     public constructor(){
@@ -10,7 +11,7 @@ export class Loueur extends Utilisateurs{
         this.livres.set(indice,livre);
         return this;
     }
-    public rm(indice: number): Loueur{
+    public remove(indice: number): Loueur{
         this.livres.delete(indice);
         return this;
     }

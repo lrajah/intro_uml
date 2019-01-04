@@ -10,7 +10,8 @@
  * @param optional nom: string ou null
  * @usage object.nom()=> retourne le nom de l'utilisateur, object.name('name') => affecte à la propriété nom
  */
- abstract class Utilisateurs{
+import{ Livre} from "./livre"
+ export abstract class Utilisateurs{
      protected nom: string;
      protected prenom: string;
      protected numAd: string;
@@ -36,4 +37,7 @@
         this.numAd=num;
         return this;
     }
+    public abstract remove(indice: number): Utilisateurs;
+    public abstract add(livre: Livre): Utilisateurs;
+
  }
